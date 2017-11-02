@@ -15,4 +15,4 @@ Player.prototype.constructor = Player;
 
 Player.prototype.update = function (){
 
-}
+};
