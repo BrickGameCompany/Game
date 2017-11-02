@@ -66,14 +66,14 @@ let playState = {
 
         player.giveDmg(dmg);
 
-        game.time.events.add(2500,this.setPlayerRound(),this);
+        this.setPlayerRound();
     },
 
     actionEnd: function () {
 
 
         action = false;
-        game.time.events.add(1000,this.attackPlayer,this);
+        this.attackPlayer();
     },
 
     attackEnemy: function () {
@@ -82,11 +82,11 @@ let playState = {
 
             enemy.giveDmg(dmg);
 
-            roundTime = null;
+            roundTime = 20;
             clearInterval(roundTimer);
             myRound = false;
             action = true;
-            game.time.events.add(2500,this.actionEnd,this);
+            this.actionEnd();
         }
     }
 };
