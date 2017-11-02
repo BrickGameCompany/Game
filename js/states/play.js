@@ -1,16 +1,25 @@
+let player, enemy, time, buttonAttack, playerHeal, enemyHeal;
 let myRound = true;
 let action = false;
 let myRoundTimer = false;
-let roundTime = 45;
+let roundTime = 20;
 let roundTimer;
+let level = 1;
 
 let playState = {
 
     create: function () {
 
+        game.add.sprite(0,0,"background");
+
         player = new Player(game);
+        enemy = new Enemy(game,"enemy","slime",3,5);
 
         time = game.add.text(640,100,roundTime,{fill:"#fff"});
+        playerHeal = game.add.text(250,100,roundTime,{fill:"#f00"});
+        enemyHeal = game.add.text(1000,100,roundTime,{fill:"#f00"});
+
+        buttonAttack = game.add.button(game.world.centerX - 95,300,'blue-green',this.attackEnemy,this,2,1,0);
 
     },
 
@@ -27,7 +36,7 @@ let playState = {
     },
 
     onMyRoundStart: function () {
-        roundTime = 45;
+        roundTime = 20;
 
         console.log("tu jestem");
 
@@ -41,6 +50,42 @@ let playState = {
             this.onMyRoundStart();
         }
 
+        playerHeal.setText(player.getHeal());
+        enemyHeal.setText(enemy.getHeal());
 
+    },
+
+    setPlayerRound: function () {
+        myRound = true;
+        myRoundTimer = true;
+        roundTime = 20;
+    },
+
+    attackPlayer: function () {
+
+        dmg = enemy.getDmg();
+
+        player.giveDmg(dmg);
+
+        setTimeout(this.setPlayerRound,2500);
+    },
+
+    actionEnd: function () {
+
+        action = false;
+        setTimeout(this.attackPlayer,1000);
+
+    },
+
+    attackEnemy: function () {
+        let dmg = player.getDmg();
+
+        enemy.giveDmg(dmg);
+
+        roundTime = null;
+        clearInterval(roundTimer);
+        myRound = false;
+        action = true;
+        setTimeout(this.actionEnd,2500);
     }
 };
