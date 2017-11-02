@@ -79,18 +79,11 @@
       "name":"Giant",
       "availability":"false",
       "description":"Gets hurt for you, he has 20 lives"
-<<<<<<< Updated upstream
     },
-<<<<<<< HEAD
     {
       "name":"Super jump",
       "availability":"false",
       "description":"Deals 5 Dmg to each opponent"
-    },
-=======
->>>>>>> master
-=======
     }
->>>>>>> Stashed changes
   ]
 }
