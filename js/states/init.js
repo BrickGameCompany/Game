@@ -2,7 +2,7 @@ let initState = {
 
     preload: function(){
 
-        let loadingLabel = game.add.text(20,150,'loading game data...');
+        let loadingLabel = game.add.text(20,150,'loading game data...',{fill:'#fff'});
     },
 
     init: function () {
@@ -14,4 +14,3 @@ let initState = {
         game.state.start('menu')
     }
 };
-module.exports = initState;

@@ -1,7 +1,5 @@
-var game = new Phaser.Game(1280, 720, Phaser.AUTO, 'game-container'),
-    initState = require( './states/init' ),
-    playState = require( './states/play' ),
-    menuState = require( './states/menu' );
+var game = new Phaser.Game(1280, 720, Phaser.AUTO, 'game-container');
+
 
 game.global = {
 

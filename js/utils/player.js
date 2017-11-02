@@ -1,4 +1,4 @@
-exports.Player = function(game){
+Player = function(game){
 
     Phaser.Sprite.call(this,game,50,50,"player");
 
@@ -10,3 +10,9 @@ exports.Player = function(game){
     game.add.existing(this);
 };
 
+Player.prototype = Object.create(Phaser.Sprite.prototype);
+Player.prototype.constructor = Player;
+
+Player.prototype.update = function (){
+
+}
