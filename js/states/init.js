@@ -1,16 +1,17 @@
 let initState = {
 
     preload: function(){
+    	this.load.image("player","assets/player.png");
 
         let loadingLabel = game.add.text(20,150,'loading game data...',{fill:'#fff'});
     },
 
-    init: function () {
+    play: function () {
 
     },
 
     create: function () {
-        this.init();
+        this.play();
         game.state.start('menu')
     }
 };
