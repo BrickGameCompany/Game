@@ -1,0 +1,12 @@
+{
+  "level_one":[
+    {
+      "name":"slime",
+      "attack":"5",
+      "heal":"7"
+    }
+  ],
+  "level_two":[
+
+  ]
+}
