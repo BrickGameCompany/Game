@@ -4,103 +4,103 @@
       "name":"Gladius",
       "availability":"true",
       "description":"Deals 8 Dmg",
-      "sprite":""
+      "sprite":"Gladius.png"
     },
     {
-      "name":"Chicken leg",
+      "name":"Raw meat",
       "availability":"true",
       "description":"Returns 3 health points",
-      "sprite":""
+      "sprite":"RawMeat.png"
     },
      {
-      "name":"Kevlar",
+      "name":"Armor",
       "availability":"true",
       "description":"You get 2 less Dmg in next opponent's move",
-      "sprite":""
+      "sprite":"Armor.png"
     },
      {
-      "name":"Telescopic truncheons",
+      "name":"Dagger",
       "availability":"true",
       "description":"Deals 6 Dmg",
-      "sprite":""
+      "sprite":"Dagger.png"
     },
      {
       "name":"Potion of strength",
       "availability":"true",
       "description":"Next attack has +5 Dmg",
-      "sprite":""
+      "sprite":"strength.png"
     },
      {
       "name":"Potion of speed",
       "availability":"true",
       "description":"You can attack 2 times",
-      "sprite":""
+      "sprite":"Speed.png"
     },
      {
       "name":"Stick",
       "availability":"true",
       "description":"Deals 5 Dmg",
-      "sprite":""
+      "sprite":"Stick.png"
     },
      {
       "name":"Potion of weakness",
       "availability":"true",
       "description":"The enemy deals -3 Dmg",
-      "sprite":""
+      "sprite":"weaknes.png"
     },
      {
-      "name":"Revolver",
+      "name":"Mace",
       "availability":"false",
       "description":"Deals 12 Dmg",
-      "sprite":""
+      "sprite":"Mace.png"
     },
     {
-      "name":"Magic powder",
+      "name":"Magic crystal",
       "availability":"false",
       "description":"Next attack has +10 Dmg",
-      "sprite":""
+      "sprite":"MCrystal.png"
     },
     {
-      "name":"Laser class 3B",
+      "name":"Magic bow",
       "availability":"false",
       "description":"The opponent sees 2 times less",
-      "sprite":""
+      "sprite":"MBow.png"
     },
     {
       "name":"Cannon",
       "availability":"false",
       "description":"Deals 15 Dmg",
-      "sprite":""
+      "sprite":"Cannon.png"
     },
     {
       "name":"Witch",
       "availability":"false",
       "description":"You get a temporary hero",
-      "sprite":""
+      "sprite":"Witch.png"
     },
     {
       "name":"Shield",
       "availability":"false",
       "description":"Blocks the opponent's next move",
-      "sprite":""
+      "sprite":"Shield.png"
     },
     {
-      "name":"Battering ram",
+      "name":"Revolver",
       "availability":"false",
       "description":"Deals 4 Dmg to each opponent",
-      "sprite":""
+      "sprite":"Revolver.png"
     },
     {
       "name":"Giant",
       "availability":"false",
       "description":"Gets hurt for you, he has 20 lives",
-      "sprite":""
+      "sprite":"Giant.png"
     },
     {
-      "name":"Super jump",
+      "name":"Super hit",
       "availability":"false",
       "description":"Deals 5 Dmg to each opponent",
-      "sprite":""
+      "sprite":"SHit.png"
     }
   ]
 }
