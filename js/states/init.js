@@ -2,7 +2,7 @@ let initState = {
 
     preload: function(){
 
-    	game.load.image("player","./assets/player.png");
+    	game.load.image("player","./assets/sprites/player.png");
 
         let loadingLabel = game.add.text(20,150,'loading game data...',{fill:'#fff'});
 

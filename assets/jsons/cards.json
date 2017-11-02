@@ -1,0 +1,14 @@
+{
+  "cards":[
+    {
+      "name":"Weapon Smash",
+      "availability":"true",
+      "description":"Next attack has +5 Dmg"
+    },
+    {
+      "name":"Weapon Smash",
+      "availability":"true",
+      "description":"Next attack has +5 Dmg"
+    }
+  ]
+}
