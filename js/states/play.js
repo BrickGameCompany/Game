@@ -2,6 +2,7 @@ let myRound = true;
 let action = false;
 let myRoundTimer = false;
 let roundTime = 45;
+let roundTimer;
 
 let playState = {
 
@@ -20,6 +21,7 @@ let playState = {
 
         if(roundTime === 0){
             myRound = false;
+            clearInterval(roundTimer);
         }
 
     },
@@ -30,7 +32,7 @@ let playState = {
         console.log("tu jestem");
 
         myRoundTimer = true;
-        setInterval(this.roundTimer,1000);
+        roundTimer = setInterval(this.roundTimer,1000);
     },
 
     update: function () {
