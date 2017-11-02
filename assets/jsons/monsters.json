@@ -1,6 +1,7 @@
 {
   "level_one":[
     {
+<<<<<<< HEAD
       "name":"Slime",
       "attack":"3",
       "heal":"4"
@@ -72,5 +73,14 @@
       "attack":"35",
       "heal":"21"
     }
+=======
+      "name":"slime",
+      "attack":"5",
+      "heal":"7"
+    }
+  ],
+  "level_two":[
+
+>>>>>>> master
   ]
 }
