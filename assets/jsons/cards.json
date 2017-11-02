@@ -1,14 +1,84 @@
 {
   "cards":[
     {
-      "name":"Weapon Smash",
+      "name":"Gladius",
+      "availability":"true",
+      "description":"Deals 8 Dmg"
+    },
+    {
+      "name":"Chicken leg",
+      "availability":"true",
+      "description":"Returns 3 health points"
+    },
+     {
+      "name":"Kevlar",
+      "availability":"true",
+      "description":"You get 2 less Dmg in next opponent's move"
+    },
+     {
+      "name":"Telescopic truncheons",
+      "availability":"true",
+      "description":"Deals 6 Dmg"
+    },
+     {
+      "name":"Potion of strenght",
       "availability":"true",
       "description":"Next attack has +5 Dmg"
     },
-    {
-      "name":"Weapon Smash",
+     {
+      "name":"Potion of speed",
       "availability":"true",
-      "description":"Next attack has +5 Dmg"
-    }
+      "description":"You can attack 2 times"
+    },
+     {
+      "name":"Stick",
+      "availability":"true",
+      "description":"Deals 5 Dmg"
+    },
+     {
+      "name":"Potion of weakness",
+      "availability":"true",
+      "description":"The enemy deals -3 Dmg"
+    },
+     {
+      "name":"Revolver",
+      "availability":"false",
+      "description":"Deals 12 Dmg"
+    },
+    {
+      "name":"Magic powder",
+      "availability":"false",
+      "description":"Next attack has +10 Dmg"
+    },
+    {
+      "name":"Laser class 3B",
+      "availability":"false",
+      "description":"The opponent sees 2 times less"
+    },
+    {
+      "name":"Cannon",
+      "availability":"false",
+      "description":"Deals 15 Dmg"
+    },
+    {
+      "name":"Witch",
+      "availability":"false",
+      "description":"You get a temporary hero"
+    },
+    {
+      "name":"Shield",
+      "availability":"false",
+      "description":"Blocks the opponent's next move"
+    },
+    {
+      "name":"Battering ram",
+      "availability":"false",
+      "description":"Deals 4 Dmg to each opponent"
+    },
+    {
+      "name":"Giant",
+      "availability":"false",
+      "description":"Gets hurt for you, he has 20 lives"
+    },
   ]
 }
