@@ -1,22 +1,21 @@
 {
   "level_one":[
     {
-<<<<<<< HEAD
       "name":"Slime",
       "attack":"3",
-      "heal":"4"
+      "heal":"4",
       "sprite":""
     },
     {
       "name":"Skeleton",
       "attack":"5",
-      "heal":"6"
+      "heal":"6",
       "sprite":""
     },
     {
       "name":"Goblin",
       "attack":"5",
-      "heal":"8"
+      "heal":"8",
       "sprite":""
     }
 
@@ -25,68 +24,66 @@
   	{
       "name":"Ghost",
       "attack":"8",
-      "heal":"12"
+      "heal":"12",
       "sprite":""
     },
     {
       "name":"Wampire",
       "attack":"20",
-      "heal":"2"
+      "heal":"2",
       "sprite":""
     },
     {
       "name":"Basilisk",
       "attack":"6",
-      "heal":"17"
+      "heal":"17",
       "sprite":""
     },
     {
       "name":"Warewolf",
       "attack":"14",
-      "heal":"10"
+      "heal":"10",
       "sprite":""
     }
-  ]
+  ],
   "level_three":[
   	{
       "name":"Troll",
       "attack":"5",
-      "heal":"25"
+      "heal":"25",
       "sprite":""
     },
     {
       "name":"Leprechaun",
       "attack":"14",
-      "heal":"9"
+      "heal":"9",
       "sprite":""
     },
     {
       "name":"Aquarius",
       "attack":"9",
-      "heal":"11"
+      "heal":"11",
       "sprite":""
     },
     {
       "name":"Sirin",
       "attack":"13",
-      "heal":"13"
+      "heal":"13",
       "sprite":""
     },
-  ]
+  ],
   "level_four":[
   	{
       "name":"Hydra",
       "attack":"18",
-      "heal":"30"
+      "heal":"30",
       "sprite":""
     },
     {
       "name":"Devil",
       "attack":"35",
-      "heal":"21"
+      "heal":"21",
       "sprite":""
     }
-
->>>>>>> master
   ]
 }

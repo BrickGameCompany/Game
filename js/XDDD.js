@@ -1,19 +1,19 @@
-var data=[];
-	$.getJSON('./assets/json/cards.json', function(datek)){
-		var name = []
-		var availability = []
-		var description = []
-		var sprite = []
+let data=[];
+	$.getJSON('./assets/json/cards.json', function(datek){
+		let name = [];
+		let availability = [];
+		let description = [];
+		let sprite = [];
 
-		for (var j=0; j<4; j++) {
+		for (let j=0; j<4; j++) {
 
-			name[j] = datek.products[j].name;
-			availability[j] = datek.products[j].availability;
-			description[j] = datek.products[j].description;
-			sprite[j] = datek.products[j].sprite;
+			name[j] = datek.cards[j].name;
+			availability[j] = datek.cards[j].availability;
+			description[j] = datek.cards[j].description;
+			sprite[j] = datek.cards[j].sprite;
 		}
 
-		for (var i in datek.products){
+		for (let i in datek.cards){
 
 			data.push({
 
@@ -23,4 +23,4 @@ var data=[];
 				sprite: sprite[i]
 			});
 		}
-	};
+	});
