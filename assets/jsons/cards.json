@@ -21,7 +21,7 @@
       "description":"Deals 6 Dmg"
     },
      {
-      "name":"Potion of strenght",
+      "name":"Potion of strength",
       "availability":"true",
       "description":"Next attack has +5 Dmg"
     },
@@ -79,6 +79,7 @@
       "name":"Giant",
       "availability":"false",
       "description":"Gets hurt for you, he has 20 lives"
+<<<<<<< Updated upstream
     },
 <<<<<<< HEAD
     {
@@ -88,5 +89,8 @@
     },
 =======
 >>>>>>> master
+=======
+    }
+>>>>>>> Stashed changes
   ]
 }
