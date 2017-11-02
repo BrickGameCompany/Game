@@ -4,86 +4,103 @@
       "name":"Gladius",
       "availability":"true",
       "description":"Deals 8 Dmg"
+      "sprite":""
     },
     {
       "name":"Chicken leg",
       "availability":"true",
       "description":"Returns 3 health points"
+      "sprite":""
     },
      {
       "name":"Kevlar",
       "availability":"true",
       "description":"You get 2 less Dmg in next opponent's move"
+      "sprite":""
     },
      {
       "name":"Telescopic truncheons",
       "availability":"true",
       "description":"Deals 6 Dmg"
+      "sprite":""
     },
      {
       "name":"Potion of strength",
       "availability":"true",
       "description":"Next attack has +5 Dmg"
+      "sprite":""
     },
      {
       "name":"Potion of speed",
       "availability":"true",
       "description":"You can attack 2 times"
+      "sprite":""
     },
      {
       "name":"Stick",
       "availability":"true",
       "description":"Deals 5 Dmg"
+      "sprite":""
     },
      {
       "name":"Potion of weakness",
       "availability":"true",
       "description":"The enemy deals -3 Dmg"
+      "sprite":""
     },
      {
       "name":"Revolver",
       "availability":"false",
       "description":"Deals 12 Dmg"
+      "sprite":""
     },
     {
       "name":"Magic powder",
       "availability":"false",
       "description":"Next attack has +10 Dmg"
+      "sprite":""
     },
     {
       "name":"Laser class 3B",
       "availability":"false",
       "description":"The opponent sees 2 times less"
+      "sprite":""
     },
     {
       "name":"Cannon",
       "availability":"false",
       "description":"Deals 15 Dmg"
+      "sprite":""
     },
     {
       "name":"Witch",
       "availability":"false",
       "description":"You get a temporary hero"
+      "sprite":""
     },
     {
       "name":"Shield",
       "availability":"false",
       "description":"Blocks the opponent's next move"
+      "sprite":""
     },
     {
       "name":"Battering ram",
       "availability":"false",
       "description":"Deals 4 Dmg to each opponent"
+      "sprite":""
     },
     {
       "name":"Giant",
       "availability":"false",
       "description":"Gets hurt for you, he has 20 lives"
+      "sprite":""
     },
     {
       "name":"Super jump",
       "availability":"false",
       "description":"Deals 5 Dmg to each opponent"
+      "sprite":""
     }
   ]
 }
