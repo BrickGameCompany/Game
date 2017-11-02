@@ -1,11 +1,12 @@
 let initState = {
 
     preload: function(){
-    	this.load.image("player","assets/player.png");
+
+    	game.load.image("player","./assets/player.png");
 
         let loadingLabel = game.add.text(20,150,'loading game data...',{fill:'#fff'});
 
-        game.load.image("button-green",".../assets/sprites/green_button00.png");
+        game.load.image("button-green","./assets/sprites/green_button00.png");
     },
 
     play: function () {
@@ -13,7 +14,7 @@ let initState = {
     },
 
     create: function () {
-        this.play();
-        game.state.start('menu')
+
+        game.state.start('menu');
     }
 };
