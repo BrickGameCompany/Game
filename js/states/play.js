@@ -1,4 +1,4 @@
-let player, enemy, time, buttonAttack, playerHeal, enemyHeal;
+let player, enemy, time, buttonAttack, playerHeal, enemyHeal, timer;
 let myRound = true;
 let action = false;
 let myRoundTimer = false;
@@ -38,7 +38,6 @@ let playState = {
     onMyRoundStart: function () {
         roundTime = 20;
 
-        console.log("tu jestem");
 
         myRoundTimer = true;
         roundTimer = setInterval(this.roundTimer,1000);
@@ -56,36 +55,38 @@ let playState = {
     },
 
     setPlayerRound: function () {
+
         myRound = true;
-        myRoundTimer = true;
+        myRoundTimer = false;
         roundTime = 20;
     },
 
     attackPlayer: function () {
-
         dmg = enemy.getDmg();
 
         player.giveDmg(dmg);
 
-        setTimeout(this.setPlayerRound,2500);
+        game.time.events.add(2500,this.setPlayerRound(),this);
     },
 
     actionEnd: function () {
 
-        action = false;
-        setTimeout(this.attackPlayer,1000);
 
+        action = false;
+        game.time.events.add(1000,this.attackPlayer,this);
     },
 
     attackEnemy: function () {
-        let dmg = player.getDmg();
+        if(myRound){
+            let dmg = player.getDmg();
 
-        enemy.giveDmg(dmg);
+            enemy.giveDmg(dmg);
 
-        roundTime = null;
-        clearInterval(roundTimer);
-        myRound = false;
-        action = true;
-        setTimeout(this.actionEnd,2500);
+            roundTime = null;
+            clearInterval(roundTimer);
+            myRound = false;
+            action = true;
+            game.time.events.add(2500,this.actionEnd,this);
+        }
     }
 };
