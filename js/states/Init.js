@@ -1,3 +1,5 @@
+let cards;
+
 let initState = {
 
     preload: function(){
