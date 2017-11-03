@@ -8,6 +8,8 @@ let menuState = {
     	buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.go,this,2,1,0);
 
         let text = game.add.text(100, 100, "Json test: " + cards.cards[0].name, { fill: '#ffffff' });
+
+        
     },
 
     go: function () {
