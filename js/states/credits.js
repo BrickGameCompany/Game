@@ -3,4 +3,4 @@ let creditsState = {
 
 		game.add.sprite(0,0, 'cre');
 	}
-}
+};

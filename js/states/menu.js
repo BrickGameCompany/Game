@@ -8,11 +8,9 @@ let menuState = {
     	buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.go,this,2,1,0);
 
     	//test
-    	var phaserJSON = game.cache.getJSON('card');
+    	var cards = game.cache.getJSON('cards');
 
-    var text = game.add.text(100, 100, "Json test: " + phaserJSON.cards, { fill: '#ffffff' });
-
-
+        var text = game.add.text(100, 100, "Json test: " + cards.cards[0].name, { fill: '#ffffff' });
     },
 
     go: function () {

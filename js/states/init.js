@@ -21,7 +21,8 @@ let initState = {
         game.time.desiredFps = 60;
 
         //json
-        game.load.json('card', 'https://api.myjson.com/bins/ach2z');
+        //game.load.json('card', 'https://api.myjson.com/bins/ach2z');
+        game.load.json('cards','./assets/jsons/cards.json');
     },
 
     play: function () {
