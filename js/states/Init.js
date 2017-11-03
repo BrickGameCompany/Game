@@ -12,6 +12,7 @@ let initState = {
         game.load.image("bg", "./assets/sprites/background_menu.jpg");
         game.load.image("button-play","./assets/sprites/menu_button.png");
         game.load.image("button-credits","./assets/sprites/Credits_button.png");
+        game.load.image("button-back", "./assets/sprites/Back_button.png");
         game.load.image("cre", "./assets/sprites/Credits.png");
         game.load.image("blue-green","./assets/sprites/blue_button00.png");
         game.load.image("background","./assets/sprites/background.png");
