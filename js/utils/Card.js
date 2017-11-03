@@ -19,3 +19,17 @@ Card.prototype.update = function (){
 Card.prototype.getName = function () {
     return this.name;
 };
+
+function CardPrototype(name, availability, sprite) {
+    this.name = name;
+    this.availability = availability;
+    this.sprite = sprite;
+
+    this.getName = function () {
+        return this.name;
+    };
+
+    this.getSprite = function () {
+        return this.sprite;
+    }
+}

@@ -4,7 +4,7 @@ let action = false;
 let myRoundTimer = false;
 let roundTime = 20;
 let roundTimer;
-let level = 1;
+let enemyDie = false;
 
 let playState = {
 
@@ -71,6 +71,13 @@ let playState = {
 
     actionEnd: function () {
 
+        if(enemyDie){
+            enemyDie = false;
+            // if create sprite and animation enemy, delete this line and add onTweenEnd event setPlayerRound;
+            this.setPlayerRound();
+            return;
+        }
+
 
         action = false;
         this.attackPlayer();
@@ -82,11 +89,35 @@ let playState = {
 
             enemy.giveDmg(dmg);
 
+            if(enemy.getHeal() <= 0){
+                this.rollEnemy();
+                enemyDie = true;
+            }
+
             roundTime = 20;
             clearInterval(roundTimer);
             myRound = false;
             action = true;
             this.actionEnd();
+        }
+    },
+
+    rollEnemy: function () {
+        // delete enemy
+        // noinspection JSAnnotator
+        delete enemy;
+
+        switch(level){
+            case 1:
+                let randomEnemy = Math.floor(Math.random()*4);
+                enemy = new Enemy(game,monstersOne[randomEnemy].getSprite(),monstersOne[randomEnemy].getName(),monstersOne[randomEnemy].getAttack(),monstersOne[randomEnemy].getHeal());
+                break;
+            case 2:
+                //let randomEnemy = Math.floor(Math.random()*5);
+                break;
+            case 3:
+                //let randomEnemy = Math.floor(Math.random()*5);
+                break;
         }
     }
 };

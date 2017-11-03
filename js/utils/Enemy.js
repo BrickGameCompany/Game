@@ -30,3 +30,26 @@ Enemy.prototype.getDmg = function () {
 Enemy.prototype.getHeal = function () {
     return this.life;
 };
+
+function EnemyPrototype(name, attack, heal, sprite) {
+    this.name = name;
+    this.attack = attack;
+    this.heal = heal;
+    this.sprite = sprite;
+
+    this.getName = function () {
+        return this.name;
+    };
+
+    this.getSprite = function () {
+        return this.sprite;
+    };
+
+    this.getAttack = function () {
+        return this.attack;
+    };
+
+    this.getHeal = function () {
+        return this.heal;
+    };
+}
