@@ -3,21 +3,21 @@ let cardState = {
     create: function () {
 
         buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.go,this,2,1,0);
-        let sel = game.add.text(game.world.centerX, 30, "Selected", {fill: 'red'});
-        buttonCard = game.add.button(15,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(195,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(375,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(555,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(735,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(915,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(1095,100,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(15,375,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(195,375,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(375,375,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(555,375,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(735,375,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(915,375,'kartap',this.go,this,2,1,0);
-        buttonCard = game.add.button(1095,375,'kartap',this.go,this,2,1,0);
+        let sel = game.add.text(game.world.centerX, 30, "Selected:", {fill: 'red'});
+        buttonCard = game.add.button(15,100,'kartap',this.go1,this,2,1,0);
+        buttonCard = game.add.button(195,100,'kartap',this.go2,this,2,1,0);
+        buttonCard = game.add.button(375,100,'kartap',this.go3,this,2,1,0);
+        buttonCard = game.add.button(555,100,'kartap',this.go4,this,2,1,0);
+        buttonCard = game.add.button(735,100,'kartap',this.go5,this,2,1,0);
+        buttonCard = game.add.button(915,100,'kartap',this.go6,this,2,1,0);
+        buttonCard = game.add.button(1095,100,'kartap',this.go7,this,2,1,0);
+        buttonCard = game.add.button(15,375,'kartap',this.go8,this,2,1,0);
+        buttonCard = game.add.button(195,375,'kartap',this.go9,this,2,1,0);
+        buttonCard = game.add.button(375,375,'kartap',this.go10,this,2,1,0);
+        buttonCard = game.add.button(555,375,'kartap',this.go11,this,2,1,0);
+        buttonCard = game.add.button(735,375,'kartap',this.go12,this,2,1,0);
+        buttonCard = game.add.button(915,375,'kartap',this.go13,this,2,1,0);
+        buttonCard = game.add.button(1095,375,'kartap',this.go14,this,2,1,0);
 
         let name1 = game.add.text(55, 120, cards.cards[1].name, {fill: 'black' , fontSize: '15px'});
         let name2 = game.add.text(245, 120, cards.cards[2].name, {fill: 'black' , fontSize: '15px'});
@@ -34,16 +34,79 @@ let cardState = {
         let name13 = game.add.text(955, 395, cards.cards[13].name, {fill: 'black' , fontSize: '15px'});
         let name14 = game.add.text(1135, 395, cards.cards[14].name, {fill: 'black' , fontSize: '15px'});
 
-        
-        var ourTable = new Array(5);
     },
     
     update: function () {
-        
     },
 
-    go: function () {
-ourTable.push('Michał');
+    go1: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[1].name);
+console.log(ourTable);
+    },
+    go2: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[2].name);
+console.log(ourTable);
+    },
+    go3: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[3].name);
+console.log(ourTable);
+    },
+    go4: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[4].name);
+console.log(ourTable);
+    },
+    go5: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[5].name);
+console.log(ourTable);
+    },
+    go6: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[6].name);
+console.log(ourTable);
+    },
+    go7: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[7].name);
+console.log(ourTable);
+    },
+    go8: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[8].name);
+console.log(ourTable);
+    },
+    go9: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[9].name);
+console.log(ourTable);
+    },
+    go10: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[10].name);
+console.log(ourTable);
+    },
+    go11: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[11].name);
+console.log(ourTable);
+    },
+    go12: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[12].name);
+console.log(ourTable);
+    },
+    go13: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[13].name);
+console.log(ourTable);
+    },
+    go14: function () {
+    	ourTable.shift();
+ourTable.push(cards.cards[14].name);
 console.log(ourTable);
     }
 };

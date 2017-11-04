@@ -1,10 +1,11 @@
 let cards, cardsAvailable, cardsNotAvailable;
 let monsters, monstersOne, monstersTwo, monstersThree, monstersBoss;
 let level = 1;
-
+var ourTable = [1, 2, 3, 4, 5];
 let initState = {
 
     preload: function(){
+
 
         let loadingLabel = game.add.text(20,150,'loading game data...',{fill:'#fff'});
 
