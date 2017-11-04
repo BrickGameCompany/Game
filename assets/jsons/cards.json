@@ -63,7 +63,7 @@
     {
       "name":"Magic bow",
       "availability":"false",
-      "description":"The opponent sees 2 times less",
+      "description":"The opponent sees 2 \n times less",
       "sprite":"MBow.png"
     },
     {
@@ -81,7 +81,7 @@
     {
       "name":"Shield",
       "availability":"false",
-      "description":"Blocks the opponent's next move",
+      "description":"Blocks the opponent's \n next move",
       "sprite":"Shield.png"
     },
     {
@@ -93,7 +93,7 @@
     {
       "name":"Giant",
       "availability":"false",
-      "description":"Gets hurt for you, he has 20 lives",
+      "description":"Gets hurt for you, \n he has 20 lives",
       "sprite":"Giant.png"
     },
     {
