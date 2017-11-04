@@ -7,11 +7,7 @@ let menuState = {
     	buttonCredits = game.add.button(game.world.centerX +15,10,'button-credits',this.cr,this,2,1,0);
     	buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.ca,this,2,1,0);
 
-<<<<<<< HEAD
-        let text = game.add.text(100, 100, "Json test: " + cards.cards[18].name, { fill: '#ffffff' });
-=======
         let text = game.add.text(100, 100, "Json test: " + cards.cards[0].name, { fill: '#ffffff' });
->>>>>>> master
 
         
     },
