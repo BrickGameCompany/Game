@@ -9,6 +9,7 @@ let initState = {
         let loadingLabel = game.add.text(20,150,'loading game data...',{fill:'#fff'});
 
         //sprites
+        game.load.image("kartap","./assets/sprites/CardF.png");
         game.load.image("bg", "./assets/sprites/background_menu.jpg");
         game.load.image("button-play","./assets/sprites/menu_button.png");
         game.load.image("button-credits","./assets/sprites/Credits_button.png");
