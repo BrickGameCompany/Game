@@ -57,7 +57,7 @@ let playState = {
 
 
         myRoundTimer = true;
-        roundTimer = setInterval(this.roundTimer,1000);
+        roundTimer = setInterval(this.roundTimer.bind(this), 1000);
     },
 
     update: function () {

@@ -1,7 +1,7 @@
 let cards, cardsAvailable, cardsNotAvailable;
 let monsters, monstersOne, monstersTwo, monstersThree, monstersBoss;
 let level = 1;
-var ourTable = [1, 2, 3, 4, 5];
+let ourTable = [1, 2, 3, 4, 5];
 let initState = {
 
     preload: function(){
