@@ -2,6 +2,7 @@ let cardState = {
     
     create: function () {
 
+<<<<<<< HEAD
         buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.go,this,2,1,0);
         let sel = game.add.text(game.world.centerX, 30, "Selected:", {fill: 'red'});
         buttonCard = game.add.button(15,100,'kartap',this.go1,this,2,1,0);
@@ -34,6 +35,11 @@ let cardState = {
         let name13 = game.add.text(955, 395, cards.cards[13].name, {fill: 'black' , fontSize: '15px'});
         let name14 = game.add.text(1135, 395, cards.cards[14].name, {fill: 'black' , fontSize: '15px'});
 
+=======
+        let buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.go,this,2,1,0);
+        let buttonCard = game.add.button(15,100,'kartap',this.go,this,2,1,0);
+        
+>>>>>>> master
     },
     
     update: function () {

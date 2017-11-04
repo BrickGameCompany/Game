@@ -1,7 +1,7 @@
 let player, enemy, time, buttonAttack, playerHeal, enemyHeal, timer;
-let myRound = true;
+let myRound = false;
 let action = false;
-let myRoundTimer = false;
+let myRoundTimer = true;
 let roundTime = 20;
 let roundTimer;
 let enemyDie = false;
@@ -14,6 +14,9 @@ let playState = {
 
         player = new Player(game);
         enemy = new Enemy(game,"enemy","slime",3,5);
+        let tween = game.add.tween(enemy).to({x: 1000},2000);
+        tween.onComplete.add(this.setPlayerRound,this);
+        tween.start();
 
         time = game.add.text(640,100,roundTime,{fill:"#fff"});
         playerHeal = game.add.text(250,100,roundTime,{fill:"#f00"});
@@ -21,6 +24,19 @@ let playState = {
 
         buttonAttack = game.add.button(game.world.centerX - 95,300,'blue-green',this.attackEnemy,this,2,1,0);
 
+    },
+
+    actionEnd: function () {
+
+        if(enemyDie){
+            enemyDie = false;
+            // if create sprite and animation enemy, delete this line and add onTweenEnd event setPlayerRound;
+            return;
+        }
+
+
+        action = false;
+        this.attackPlayer();
     },
 
     roundTimer: function () {
@@ -31,12 +47,13 @@ let playState = {
         if(roundTime === 0){
             myRound = false;
             clearInterval(roundTimer);
+            this.attackPlayer();
         }
 
     },
 
     onMyRoundStart: function () {
-        roundTime = 20;
+        roundTime = 21;
 
 
         myRoundTimer = true;
@@ -54,66 +71,51 @@ let playState = {
 
     },
 
-    setPlayerRound: function () {
 
+    setPlayerRound: function () {
+        enemyDie = false;
         myRound = true;
         myRoundTimer = false;
-        roundTime = 20;
+        roundTime = 21;
     },
 
     attackPlayer: function () {
         dmg = enemy.getDmg();
 
         player.giveDmg(dmg);
-
         this.setPlayerRound();
     },
 
-    actionEnd: function () {
+attackEnemy: function () {
+    if(myRound){
+        let dmg = player.getDmg();
 
-        if(enemyDie){
-            enemyDie = false;
-            // if create sprite and animation enemy, delete this line and add onTweenEnd event setPlayerRound;
-            this.setPlayerRound();
-            return;
-        }
+        enemy.giveDmg(dmg);
 
+        roundTime = 21;
+        clearInterval(roundTimer);
 
-        action = false;
-        this.attackPlayer();
-    },
-
-    attackEnemy: function () {
-        if(myRound){
-            let dmg = player.getDmg();
-
-            enemy.giveDmg(dmg);
-
-            if(enemy.getHeal() <= 0){
-                this.rollEnemy();
-                enemyDie = true;
-            }
-
-            roundTime = 20;
-            clearInterval(roundTimer);
-            myRound = false;
-            action = true;
-            if(!enemyDie)
-                this.actionEnd();
+        let tween = game.add.tween(player).to({x:800},1000);
+            tween.onComplete.add(() => {
+                let nextTween = game.add.tween(player).to({x:250},1000)
+                nextTween.onComplete.add(this.checkEnemy,this);
+                nextTween.start();
+            },this);
+            tween.start();
         }
     },
 
-    rollEnemy: function () {
-        // delete enemy
+// delete enemy
+rollEnemy: function () {
+
         // noinspection JSAnnotator
-        delete enemy;
-
+        enemy.kill();
         switch(level){
             case 1:
                 let randomEnemy = Math.floor(Math.random()*4);
                 enemy = new Enemy(game,monstersOne[randomEnemy].getSprite(),monstersOne[randomEnemy].getName(),monstersOne[randomEnemy].getAttack(),monstersOne[randomEnemy].getHeal());
                 let tween = game.add.tween(enemy).to({x: 1000},2000);
-                tween.onComplete.add(this.actionEnd,this);
+                tween.onComplete.add(this.setPlayerRound,this);
                 tween.start();
                 break;
             case 2:
@@ -123,5 +125,17 @@ let playState = {
                 //let randomEnemy = Math.floor(Math.random()*5);
                 break;
         }
+    },
+
+checkEnemy: function () {
+        if(enemy.getHeal() <= 0){
+            this.rollEnemy();
+            enemyDie = true;
+
+        }
+        myRound = false;
+        action = true;
+        if(!enemyDie)
+            this.actionEnd();
     }
 };
