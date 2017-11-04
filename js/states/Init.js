@@ -11,6 +11,7 @@ let initState = {
 
         //sprites
         game.load.image("kartap","./assets/sprites/CardF.png");
+        game.load.image("kartas","./assets/sprites/CardFS.png");
         game.load.image("bg", "./assets/sprites/background_menu.jpg");
         game.load.image("button-play","./assets/sprites/menu_button.png");
         game.load.image("button-credits","./assets/sprites/Credits_button.png");
@@ -18,8 +19,23 @@ let initState = {
         game.load.image("cre", "./assets/sprites/Credits.png");
         game.load.image("blue-green","./assets/sprites/blue_button00.png");
         game.load.image("background","./assets/sprites/background.png");
-        game.load.image("player","./assets/sprites/player.png");
+        game.load.image("player","./assets/sprites/horse.png");
         game.load.image("enemy","./assets/sprites/enemy.png");
+        game.load.image("rmeat", "./assets/sprites/items/RawMeat.png");
+        game.load.image("Gladius", "./assets/sprites/items/Gladius.png");
+        game.load.image("Armor", "./assets/sprites/items/Armor.png");
+        game.load.image("Dagger", "./assets/sprites/items/Dagger.png");
+        game.load.image("strenght", "./assets/sprites/items/strenght.png");
+        game.load.image("Speed", "./assets/sprites/items/Speed.png");
+        game.load.image("Stick", "./assets/sprites/items/Stick.png");
+        game.load.image("Weaknes", "./assets/sprites/items/Weaknes.png");
+        game.load.image("Mace", "./assets/sprites/items/Mace.png");
+        game.load.image("MCrystal", "./assets/sprites/items/MCrystal.png");
+        game.load.image("Mbow", "./assets/sprites/items/MBow.png");
+        game.load.image("Cannon", "./assets/sprites/items/Cannon.png");
+        game.load.image("Witch", "./assets/sprites/items/Witch.png");
+        game.load.image("Revolver", "./assets/sprites/items/Revolver.png");
+        game.load.image("Shield", "./assets/sprites/items/Shield.png");
 
         //audio
 
