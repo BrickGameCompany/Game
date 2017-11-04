@@ -98,7 +98,8 @@ let playState = {
             clearInterval(roundTimer);
             myRound = false;
             action = true;
-            this.actionEnd();
+            if(!enemyDie)
+                this.actionEnd();
         }
     },
 
@@ -111,6 +112,8 @@ let playState = {
             case 1:
                 let randomEnemy = Math.floor(Math.random()*4);
                 enemy = new Enemy(game,monstersOne[randomEnemy].getSprite(),monstersOne[randomEnemy].getName(),monstersOne[randomEnemy].getAttack(),monstersOne[randomEnemy].getHeal());
+                let tween = game.add.tween(enemy).to({x: 1000},2000,Phaser.Easing.Linear);
+                tween.onComplete.add(this.actionEnd,this);
                 break;
             case 2:
                 //let randomEnemy = Math.floor(Math.random()*5);
