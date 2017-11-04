@@ -32,7 +32,21 @@ let cardState = {
         let name12 = game.add.text(775, 395, cards.cards[12].name, {fill: 'black' , fontSize: '15px'});
         let name13 = game.add.text(955, 395, cards.cards[13].name, {fill: 'black' , fontSize: '15px'});
         let name14 = game.add.text(1135, 395, cards.cards[14].name, {fill: 'black' , fontSize: '15px'});
-
+        
+        let sprite1 = game.add.image(55, 120+30, cards.cards[1].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite2 = game.add.image(245, 120+30, cards.cards[2].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite3 = game.add.image(425, 120+30, cards.cards[3].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite4 = game.add.image(585, 125+30, cards.cards[4].sprite, {fill: 'black' , fontSize: '10px'});
+        let sprite5 = game.add.image(775, 125+30, cards.cards[5].sprite, {fill: 'black' , fontSize: '10px'});
+        let sprite6 = game.add.image(955, 120+30, cards.cards[6].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite7 = game.add.image(1125, 125+30, cards.cards[7].sprite, {fill: 'black' , fontSize: '10px'});
+        let sprite8 = game.add.image(70, 395+30, cards.cards[8].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite9 = game.add.image(220, 395+30, cards.cards[9].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite10 = game.add.image(410, 395+30, cards.cards[10].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite11 = game.add.image(595, 395+30, cards.cards[11].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite12 = game.add.image(775, 395+30, cards.cards[12].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite13 = game.add.image(955, 395+30, cards.cards[13].sprite, {fill: 'black' , fontSize: '15px'});
+        let sprite14 = game.add.image(1135, 395+30, cards.cards[14].sprite, {fill: 'black' , fontSize: '15px'});
 
         let description1 = game.add.text(40, 280, cards.cards[1].description, {fill: 'black' , fontSize: '8px'});
         let description2 = game.add.text(230, 280, cards.cards[2].description, {fill: 'black' , fontSize: '8px'});
@@ -51,6 +65,9 @@ let cardState = {
     },
     
     update: function () {
+    },
+    go: function () {
+        game.state.start("play")
     },
 
     go1: function () {
