@@ -89,6 +89,9 @@ let cardState = {
     go: function () {
         game.state.start("play")
     },
+    go: function () {
+        game.state.start("play")
+    },
 
     go1: function () {
     	ourTable.shift();
