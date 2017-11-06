@@ -1,7 +1,7 @@
 let cards, cardsAvailable, cardsNotAvailable;
 let monsters, monstersOne, monstersTwo, monstersThree, monstersBoss;
 let level = 1;
-let ourTable = [1, 2, 3, 4, 5];
+
 let initState = {
 
     preload: function(){
@@ -12,6 +12,9 @@ let initState = {
         //sprites
         game.load.image("kartap","./assets/sprites/CardF.png");
         game.load.image("kartas","./assets/sprites/CardFS.png");
+        game.load.image("table","./assets/sprites/table.png");
+        game.load.image("left_arrow","./assets/sprites/left.png");
+        game.load.image("right_arrow","./assets/sprites/right.png");
         game.load.image("bg", "./assets/sprites/background_menu.jpg");
         game.load.image("button-play","./assets/sprites/menu_button.png");
         game.load.image("button-credits","./assets/sprites/Credits_button.png");
@@ -21,8 +24,12 @@ let initState = {
         game.load.image("background","./assets/sprites/background.png");
         game.load.image("player","./assets/sprites/horse.png");
         game.load.image("enemy","./assets/sprites/enemy.png");
+        game.load.image("blank","./assets/sprites/blank.png");
+        game.load.image("pick","./assets/sprites/pick.png");
+
+        //items
         game.load.image("rmeat", "./assets/sprites/items/RawMeat.png");
-        game.load.image("Gladius", "./assets/sprites/items/Gladius.png");
+        game.load.image("glad", "./assets/sprites/items/Gladius.png");
         game.load.image("Armor", "./assets/sprites/items/Armor.png");
         game.load.image("Dagger", "./assets/sprites/items/Dagger.png");
         game.load.image("strenght", "./assets/sprites/items/strenght.png");
@@ -61,9 +68,9 @@ let initState = {
         //adds cards
         for(let i = 0; i < 17; i++){
             if(cards.cards[i].availability === 'true'){
-                cardsAvailable = new CardPrototype(cards.cards[i].name,cards.cards[i].availability,cards.cards[i].sprite);
+                cardsAvailable.push(new CardPrototype(cards.cards[i].name,cards.cards[i].availability,cards.cards[i].sprite));
             }else{
-                cardsNotAvailable = new CardPrototype(cards.cards[i].name,cards.cards[i].availability,cards.cards[i].sprite);
+                cardsNotAvailable.push(new CardPrototype(cards.cards[i].name,cards.cards[i].availability,cards.cards[i].sprite));
             }
         }
 
