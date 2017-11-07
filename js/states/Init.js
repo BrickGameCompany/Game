@@ -55,6 +55,9 @@ let initState = {
         game.load.json('cards','./assets/jsons/cards.json');
         game.load.json('monsters','./assets/jsons/monsters.json');
 
+        //font
+        game.load.script('webfont', 'https://fonts.googleapis.com/css?family=Lobster')
+
 
     },
 
