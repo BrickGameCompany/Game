@@ -5,6 +5,7 @@ let myRoundTimer = true;
 let roundTime = 20;
 let roundTimer;
 let enemyDie = false;
+let Expik = 16;
 
 let playState = {
 
@@ -84,6 +85,7 @@ let playState = {
 
         player.giveDmg(dmg);
         this.setPlayerRound();
+
     },
 
 attackEnemy: function () {
@@ -112,7 +114,7 @@ rollEnemy: function () {
         enemy.kill();
         switch(level){
             case 1:
-                let randomEnemy = Math.floor(Math.random()*4);
+                let randomEnemy = Math.floor(Math.random()*3);
                 enemy = new Enemy(game,monstersOne[randomEnemy].getSprite(),monstersOne[randomEnemy].getName(),monstersOne[randomEnemy].getAttack(),monstersOne[randomEnemy].getHeal());
                 let tween = game.add.tween(enemy).to({x: 1000},2000);
                 tween.onComplete.add(this.setPlayerRound,this);
@@ -131,11 +133,20 @@ checkEnemy: function () {
         if(enemy.getHeal() <= 0){
             this.rollEnemy();
             enemyDie = true;
-
+            Expik += 1;
+            console.log(Expik)
+            Tescik = game.debug.text(Expik,250,500);
         }
         myRound = false;
         action = true;
         if(!enemyDie)
             this.actionEnd();
+    },
+
+    wictory: function () {
+        if(enemy.getName === "slime" && enemy.getHeal <= 0){
+            game.state.start("wictory");
+        }
+
     }
 };

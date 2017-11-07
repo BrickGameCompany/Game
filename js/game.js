@@ -11,5 +11,6 @@ game.state.add('init',initState);
 game.state.add('menu',menuState);
 game.state.add('play',playState);
 game.state.add('credits',creditsState);
+game.state.add('wictory', wictoryState);
 
 game.state.start('init');

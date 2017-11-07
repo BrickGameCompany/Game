@@ -39,7 +39,12 @@ let cardState = {
     },
 
     go: function () {
+    	if(deck.length == 5 && nameArray.length == 5){
         game.state.start("play")
+        	}
+    	else{
+    	game.add.text(500,50,"Nie wybrałeś 5 kart"{fill: '#f00'});
+    	}
     },
 
     pickOne: function () {
