@@ -1,5 +1,6 @@
 let cards, cardsAvailable, cardsNotAvailable;
 let monsters, monstersOne, monstersTwo, monstersThree, monstersBoss;
+let expSprites;
 let level = 1;
 
 let initState = {
@@ -26,6 +27,14 @@ let initState = {
         game.load.image("enemy","./assets/sprites/enemy.png");
         game.load.image("blank","./assets/sprites/blank.png");
         game.load.image("pick","./assets/sprites/pick.png");
+        game.load.image("ground","./assets/sprites/ground_2.png");
+
+        //exp
+        game.load.image("exp0","./assets/sprites/exp/exp_0.png");
+        game.load.image("exp1","./assets/sprites/exp/exp_1.png");
+        game.load.image("exp2","./assets/sprites/exp/exp_2.png");
+        game.load.image("exp3","./assets/sprites/exp/exp_3.png");
+        game.load.image("exp4","./assets/sprites/exp/exp_4.png");
 
         //items
         game.load.image("rmeat", "./assets/sprites/items/RawMeat.png");
@@ -56,12 +65,14 @@ let initState = {
         game.load.json('monsters','./assets/jsons/monsters.json');
 
         //font
-        game.load.script('webfont', 'https://fonts.googleapis.com/css?family=Lobster')
+        //game.load.script('webfont', 'https://fonts.googleapis.com/css?family=Luckiest+Guy')
 
 
     },
 
     play: function () {
+        expSprites = ['exp0','exp1','exp2','exp3','exp4'];
+
         cards = game.cache.getJSON('cards');
         monsters = game.cache.getJSON('monsters');
 
