@@ -99,7 +99,7 @@ attackEnemy: function () {
 
         let tween = game.add.tween(player).to({x:800},1000);
             tween.onComplete.add(() => {
-                let nextTween = game.add.tween(player).to({x:250},1000)
+                let nextTween = game.add.tween(player).to({x:250},1000);
                 nextTween.onComplete.add(this.checkEnemy,this);
                 nextTween.start();
             },this);
