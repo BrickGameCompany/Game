@@ -1,4 +1,4 @@
-let player, enemy, time, buttonAttack, playerHeal, enemyHeal, timer;
+let player, enemy, time, buttonAttack, playerHealText, enemyHealText, timer, healBarPlayer, healBarEnemy;
 let myRound = false;
 let action = false;
 let myRoundTimer = true;
@@ -33,12 +33,15 @@ let playState = {
         game.add.sprite(0,45,'tree_1');
 
         time = game.add.text(640,100,roundTime,{fill:"#fff"});
-        playerHeal = game.add.text(250,100,roundTime,{fill:"#f00"});
-        enemyHeal = game.add.text(1000,100,roundTime,{fill:"#f00"});
+        playerHealText = game.add.text(250,5,roundTime,{fill:"#f00"});
+        enemyHealText = game.add.text(1000,5,roundTime,{fill:"#f00"});
 
         buttonAttack = game.add.button(game.world.centerX - 95,375,'blue-green',this.attackEnemy,this,2,1,0);
 
         for(let i=0; i<2;i++){ this.addCard()}
+
+        healBarEnemy = game.add.graphics(0,0);
+        healBarPlayer = game.add.graphics(0,0);
     },
 
     actionEnd: function () {
@@ -81,9 +84,35 @@ let playState = {
             this.onMyRoundStart();
         }
 
-        playerHeal.setText(player.getHeal());
-        enemyHeal.setText(enemy.getHeal());
+        enemy.zeroHeal();
 
+        let enemyHeal = enemy.getHeal();
+        let playerHeal = player.getHeal();
+
+        if(playerHeal <= 0){
+            game.state.start('lose');
+        }
+
+        playerHealText.setText(player.getHeal());
+        enemyHealText.setText(enemy.getHeal());
+
+        if(playerHeal > 150)
+            playerHeal = 150;
+
+        if(enemyHeal > 150)
+            enemyHeal = 150;
+
+        healBarPlayer.clear();
+        healBarPlayer.lineStyle(2, 0x000000);
+        healBarPlayer.beginFill(0xBC1100);
+        healBarPlayer.drawRect(140,40,2*playerHeal,50);
+        healBarPlayer.endFill();
+
+        healBarEnemy.clear();
+        healBarEnemy.lineStyle(2, 0x000000);
+        healBarEnemy.beginFill(0xBC1100);
+        healBarEnemy.drawRect(840,40,2*enemyHeal,50);
+        healBarEnemy.endFill();
     },
 
 
@@ -188,7 +217,8 @@ let playState = {
             exp += 1;
             this.checkLevel();
             //add aniamtion level
-            this.rollEnemy();
+            if(!(level === 3 && exp === 0 || level === 4))
+                this.rollEnemy();
             this.addCard();
             enemyDie = true;
         }
@@ -215,6 +245,21 @@ let playState = {
     levelUp: function () {
         exp = 0;
         level += 1;
+
+        if(level === 3){
+            enemy.kill();
+            enemy = new Enemy(game,monstersBoss[0].getSprite(),monstersBoss[0].getName(),monstersBoss[0].getAttack(),monstersBoss[0].getHeal());
+            tween = game.add.tween(enemy).to({x: 1000},2000);
+            tween.onComplete.add(this.setPlayerRound,this);
+            tween.start();
+        }
+        if(level === 4){
+            enemy.kill();
+            enemy = new Enemy(game,monstersBoss[1].getSprite(),monstersBoss[1].getName(),monstersBoss[1].getAttack(),monstersBoss[1].getHeal());
+            tween = game.add.tween(enemy).to({x: 1000},2000);
+            tween.onComplete.add(this.setPlayerRound,this);
+            tween.start();
+        }
     },
 
     addCard: function () {

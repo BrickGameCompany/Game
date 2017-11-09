@@ -10,6 +10,8 @@ let readyAdd = true;
 let cardState = {
 
     create: function () {
+
+        game.add.sprite(0,0,'background_menu');
         buttonPlay = game.add.button(550,10,'button-play',this.go,this,2,1,0);
 
         buttonLeft = game.add.button(70,460,'left_arrow',this.back);
