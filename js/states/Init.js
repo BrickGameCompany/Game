@@ -29,6 +29,7 @@ let initState = {
         game.load.image("pick","./assets/sprites/pick.png");
         game.load.image("ground","./assets/sprites/ground_2.png");
         game.load.image("background_game","./assets/sprites/background_3.png");
+        game.load.image("background_menu","./assets/sprites/background_4.png");
         game.load.image("tree_1","./assets/sprites/tree04.png");
         game.load.image("tree_2","./assets/sprites/tree12.png");
         game.load.image("unicorn","./assets/sprites/unicorn.png");

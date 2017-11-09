@@ -2,7 +2,7 @@ let menuState = {
 
 
     create: function () {
-    	game.add.sprite(0,0, 'bg');
+        game.add.sprite(0,0,'background_menu');
 
     	buttonCredits = game.add.button(game.world.centerX +15,10,'button-credits',this.cr,this,2,1,0);
     	buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.ca,this,2,1,0);
