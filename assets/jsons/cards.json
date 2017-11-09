@@ -1,39 +1,39 @@
 {
   "cards":[
     {
-      "name":"Gladius",
+      "name":"Snowman nose",
       "availability":"true",
       "description":"Deals 8 Dmg",
       "sprite": "glad"
     },
     {
-      "name":"Raw meat",
+      "name":"Orange",
       "availability":"true",
       "description":"Returns 3 health points",
       "sprite":"rmeat"
     },
      {
-      "name":"Armor",
+      "name":"Snow jacket",
       "availability":"true",
       "description":"You get 2 less Dmg in \n next opponent's move",
       "sprite":"Armor"
     },
      {
-      "name":"Dagger",
+      "name":"Snowball",
       "availability":"true",
       "description":"Deals 6 Dmg",
       "sprite":"Dagger"
     },
      {
-      "name":"Potion of strength",
+      "name":"Snow fury",
       "availability":"true",
       "description":"Next attack has +5 Dmg",
       "sprite":"strenght"
     },
      {
-      "name":"Potion of speed",
+      "name":"Winter boots",
       "availability":"true",
-      "description":"You can attack 2 times",
+      "description":"Blocks the opponent's \n next move",
       "sprite":"Speed"
     },
      {
@@ -43,61 +43,61 @@
       "sprite":"Stick"
     },
      {
-      "name":"Potion of weakness",
+      "name":"Freeze",
       "availability":"true",
       "description":"The enemy deals -3 Dmg",
       "sprite":"Weaknes"
     },
      {
-      "name":"Mace",
+      "name":"Ice mace",
       "availability":"false",
       "description":"Deals 12 Dmg",
       "sprite":"Mace"
     },
     {
-      "name":"Magic crystal",
+      "name":"Crystal of winter",
       "availability":"false",
       "description":"Next attack has +10 Dmg",
       "sprite":"MCrystal"
     },
     {
-      "name":"Magic bow",
+      "name":"Snow trap",
       "availability":"false",
-      "description":"The opponent sees 2 \n times less",
+      "description":"The opponent deals 2 times less damage",
       "sprite":"Mbow"
     },
     {
-      "name":"Cannon",
+      "name":"Snow cannon",
       "availability":"false",
       "description":"Deals 15 Dmg",
       "sprite":"Cannon"
     },
     {
-      "name":"Witch",
+      "name":"Wind",
       "availability":"false",
-      "description":"You get a temporary hero",
+      "description":"Add card to hand",
       "sprite":"Witch"
     },
     {
-      "name":"Shield",
+      "name":"Ice fortress",
       "availability":"false",
       "description":"Blocks the opponent's \n next move",
       "sprite":"Shield"
     },
     {
-      "name":"Revolver",
+      "name":"Icicle",
       "availability":"false",
       "description":"Deals 4 Dmg to each opponent",
       "sprite":"Revolver"
     },
     {
-      "name":"Giant",
+      "name":"Hot chocolate",
       "availability":"false",
-      "description":"Gets hurt for you, \n he has 20 lives",
+      "description":"Returns 10 health points",
       "sprite":"Giant"
     },
     {
-      "name":"Super hit",
+      "name":"Snow punch",
       "availability":"false",
       "description":"Deals 5 Dmg to each opponent",
       "sprite":"SHit"

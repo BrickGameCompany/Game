@@ -10,7 +10,7 @@ let readyAdd = true;
 let cardState = {
 
     create: function () {
-        buttonPlay = game.add.button(game.world.centerX -165,10,'button-play',this.go,this,2,1,0);
+        buttonPlay = game.add.button(550,10,'button-play',this.go,this,2,1,0);
 
         buttonLeft = game.add.button(70,460,'left_arrow',this.back);
         buttonRight = game.add.button(1078,460,'right_arrow',this.up);
@@ -31,7 +31,8 @@ let cardState = {
         pickButton[2] = game.add.button(230 + (2 * 168), 410, pickHand[2].getSprite(), this.pickThree,this);
         pickButton[3] = game.add.button(230 + (3 * 168), 410, pickHand[3].getSprite(), this.pickFour,this);
         pickButton[4] = game.add.button(230 + (4 * 168), 410, pickHand[4].getSprite(), this.pickFive,this);
-        console.log(deck);
+
+        this.button = [];
     },
 
     update: function () {
@@ -43,14 +44,15 @@ let cardState = {
         game.state.start("play")
         	}
     	else{
-    	game.add.text(500,50,"Nie wybrałeś 5 kart"{fill: '#f00'});
+    	game.add.text(750,35,"You did`t pick 5 cards",{fill: '#f00'});
     	}
     },
 
     pickOne: function () {
         console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.find(pickHand[0].getName)){
+            name = pickHand[0].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -67,7 +69,8 @@ let cardState = {
     pickTwo: function () {
         console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.find(pickHand[1].getName)){
+            name = pickHand[1].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -84,7 +87,8 @@ let cardState = {
     pickThree: function () {
         console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.find(pickHand[2].getName)){
+            name = pickHand[2].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -101,7 +105,8 @@ let cardState = {
     pickFour: function () {
         console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.find(pickHand[3].getName)){
+            name = pickHand[3].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -118,7 +123,8 @@ let cardState = {
     pickFive: function () {
         console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.find(pickHand[4].getName)){
+            name = pickHand[4].getName();
+            if(nameArray.indexOf(name) >= 0){
 
             }else{
                 if(deck.length === 5){
@@ -181,11 +187,16 @@ let cardState = {
     },
 
     drawSelect: function () {
+        for(let j = 0; j < this.button.length;j++){
+            this.button[j].kill();
+        }
+
+        this.button = [];
         for(let i = 0; i < deck.length; i++){
-        button = game.add.button(230 + (i * 168),111,deck[i].getSprite(),()=>{
-            deck.splice(i);
-            nameArray.splice(i);
-            button.kill();
+        this.button[i] = game.add.button(230 + (i * 168),111,deck[i].getSprite(),()=>{
+            deck.splice(i,1);
+            nameArray.splice(i,1);
+            this.drawSelect();
             console.log(deck,nameArray);
         });
         }

@@ -1,5 +1,6 @@
 let cards, cardsAvailable, cardsNotAvailable;
 let monsters, monstersOne, monstersTwo, monstersThree, monstersBoss;
+let expSprites;
 let level = 1;
 
 let initState = {
@@ -26,6 +27,18 @@ let initState = {
         game.load.image("enemy","./assets/sprites/enemy.png");
         game.load.image("blank","./assets/sprites/blank.png");
         game.load.image("pick","./assets/sprites/pick.png");
+        game.load.image("ground","./assets/sprites/ground_2.png");
+        game.load.image("background_game","./assets/sprites/background_3.png");
+        game.load.image("tree_1","./assets/sprites/tree04.png");
+        game.load.image("tree_2","./assets/sprites/tree12.png");
+        game.load.image("unicorn","./assets/sprites/unicorn.png");
+
+        //exp
+        game.load.image("exp0","./assets/sprites/exp/exp_0.png");
+        game.load.image("exp1","./assets/sprites/exp/exp_1.png");
+        game.load.image("exp2","./assets/sprites/exp/exp_2.png");
+        game.load.image("exp3","./assets/sprites/exp/exp_3.png");
+        game.load.image("exp4","./assets/sprites/exp/exp_4.png");
 
         //items
         game.load.image("rmeat", "./assets/sprites/items/RawMeat.png");
@@ -44,6 +57,22 @@ let initState = {
         game.load.image("Revolver", "./assets/sprites/items/Revolver.png");
         game.load.image("Shield", "./assets/sprites/items/Shield.png");
 
+        //enemys
+        game.load.image("goblin","./assets/sprites/enemy/goblin.png");
+        game.load.image("ghost","./assets/sprites/enemy/ghost.png");
+        game.load.image("skeleton","./assets/sprites/enemy/skeleton.png");
+        game.load.image("troll","./assets/sprites/enemy/troll.png");
+        game.load.image("slime","./assets/sprites/enemy/slime.png");
+        game.load.image("vampir","./assets/sprites/enemy/vampir.png");
+        game.load.image("werewolf","./assets/sprites/enemy/werewolf.png");
+        game.load.image("lepre","./assets/sprites/enemy/lepre.png");
+        game.load.image("bazylisk","./assets/sprites/enemy/bazylisk.png");
+        game.load.image("devil","./assets/sprites/enemy/devil.png");
+        game.load.image("gremlin","./assets/sprites/enemy/gremlin.png");
+        game.load.image("hydra","./assets/sprites/enemy/hydra.png");
+        game.load.image("phoenix","./assets/sprites/enemy/phoenix.png");
+
+
         //audio
 
 
@@ -56,12 +85,14 @@ let initState = {
         game.load.json('monsters','./assets/jsons/monsters.json');
 
         //font
-        game.load.script('webfont', 'https://fonts.googleapis.com/css?family=Lobster')
+        //game.load.script('webfont', 'https://fonts.googleapis.com/css?family=Luckiest+Guy')
 
 
     },
 
     play: function () {
+        expSprites = ['exp0','exp1','exp2','exp3','exp4'];
+
         cards = game.cache.getJSON('cards');
         monsters = game.cache.getJSON('monsters');
 

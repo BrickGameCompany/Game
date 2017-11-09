@@ -1,6 +1,6 @@
 Player = function(game){
 
-    Phaser.Sprite.call(this,game,250,450,"player");
+    Phaser.Sprite.call(this,game,250,310,"unicorn");
 
     this.anchor.setTo(0.5,1);
 
@@ -27,4 +27,8 @@ Player.prototype.getDmg = function () {
 
 Player.prototype.getHeal = function () {
     return this.life;
+};
+
+Player.prototype.addHeal = function (add) {
+    this.life += add;
 };

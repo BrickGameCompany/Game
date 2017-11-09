@@ -1,6 +1,6 @@
 Enemy = function (game, sprite, name, attack, heal) {
 
-    Phaser.Sprite.call(this,game,2000,450,"enemy");
+    Phaser.Sprite.call(this,game,2000,310,sprite);
 
     this.anchor.setTo(0.5,1);
 
