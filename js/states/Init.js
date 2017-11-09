@@ -96,8 +96,6 @@ let initState = {
         for(let i = 0; i<3; i++){
             monstersOne[i] = new EnemyPrototype(monsters.level_one[i].name,monsters.level_one[i].attack,monsters.level_one[i].heal,monsters.level_one[i].sprite);
         }
-        console.log(monstersOne);
-
 
         for(let i = 0; i<4; i++){
             monstersTwo[i] = new EnemyPrototype(monsters.level_two[i].name,monsters.level_two[i].attack,monsters.level_two[i].heal,monsters.level_two[i].sprite);

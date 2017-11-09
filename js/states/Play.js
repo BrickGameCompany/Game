@@ -8,6 +8,8 @@ let enemyDie = false;
 let exp = 0;
 let expBar;
 let handDeck = [];
+let dmgMe = 0, dmgMeMinus = 0, bonusDmg = 0;
+let blockEnemy = false;
 
 let playState = {
 
@@ -31,7 +33,7 @@ let playState = {
 
         buttonAttack = game.add.button(game.world.centerX - 95,375,'blue-green',this.attackEnemy,this,2,1,0);
 
-        for(let i=0; i<5;i++){ this.addCard()}
+        for(let i=0; i<2;i++){ this.addCard()}
     },
 
     actionEnd: function () {
@@ -90,7 +92,18 @@ let playState = {
     attackPlayer: function () {
         dmg = enemy.getDmg();
 
-        player.giveDmg(dmg);
+        if(!blockEnemy){
+            if(dmgMe > 0)
+                dmg = dmg / dmgMe;
+            console.log(dmg);
+            if(dmgMeMinus > 0)
+                dmg = dmg - dmgMeMinus;
+            console.log(dmg);
+            player.giveDmg(dmg);
+        }
+        blockEnemy = false;
+        dmgMe = 0;
+        dmgMeMinus = 0;
         this.setPlayerRound();
 
     },
@@ -99,7 +112,9 @@ let playState = {
     if(myRound){
         let dmg = player.getDmg();
 
-        enemy.giveDmg(dmg);
+
+        enemy.giveDmg(dmg + bonusDmg);
+        bonusDmg = 0;
 
         roundTime = 21;
         clearInterval(roundTimer);
@@ -112,6 +127,13 @@ let playState = {
             },this);
             tween.start();
         }
+    },
+
+    cardAttackEnemy: function () {
+
+        roundTime = 21;
+        clearInterval(roundTimer);
+        this.checkEnemy();
     },
 
     // delete enemy
@@ -152,6 +174,7 @@ let playState = {
             this.checkLevel();
             //add aniamtion level
             this.rollEnemy();
+            this.addCard();
             enemyDie = true;
         }
         myRound = false;
@@ -201,104 +224,158 @@ let playState = {
         for(let i = 0; i < handDeck.length; i++){
             console.log("jestem tutaj");
             this.cards[i] = game.add.button(385 + (i * 169),456,handDeck[i].getSprite(),()=>{
-                handDeck.splice(i,1);
-                switch (handDeck[i].getName()){
-                    case "Snowman nose":
-                        this.snowmanNose();
-                        break;
-                    case "Orange":
-                        this.orange();
-                        break;
-                    case "Snow jacket":
-                        break;
-                    case "Snowball":
-                        break;
-                    case "Snow fury":
-                        break;
-                    case "Winter boots":
-                        break;
-                    case "Stick":
-                        break;
-                    case "Freeze":
-                        break;
-                    case "Ice mace":
-                        break;
-                    case "Crystal of winter":
-                        break;
-                    case "Snow cannon":
-                        break;
-                    case "Snow trap":
-                        break;
-                    case "Ice fortress":
-                        break;
-                    case "Icicle":
-                        break;
-                    case "Snow punch":
-                        break;
+                if(myRound){
+                    switch (handDeck[i].getName()){
+                        case "Snowman nose":
+                            this.snowmanNose();
+                            break;
+                        case "Orange":
+                            this.orange();
+                            break;
+                        case "Snow jacket":
+                            this.snowJacket();
+                            break;
+                        case "Snowball":
+                            this.snowBall();
+                            break;
+                        case "Snow fury":
+                            this.snowFury();
+                            break;
+                        case "Winter boots":
+                            this.winterBoots();
+                            break;
+                        case "Stick":
+                            this.stick();
+                            break;
+                        case "Freeze":
+                            this.freeze();
+                            break;
+                        case "Ice mace":
+                            this.iceMace();
+                            break;
+                        case "Crystal of winter":
+                            this.crystalOfWinter();
+                            break;
+                        case "Snow cannon":
+                            this.snowCannon();
+                            break;
+                        case "Wind":
+                            this.wind();
+                            break;
+                        case "Snow trap":
+                            this.snowTrap();
+                            break;
+                        case "Ice fortress":
+                            this.iceFortress();
+                            break;
+                        case "Icicle":
+                            this.icicle();
+                            break;
+                        case "Hot chocolate":
+                            this.hotChocolate();
+                            break;
+                        case "Snow punch":
+                            this.snowPunch();
+                            break;
 
+                    }
+                    handDeck.splice(i,1);
+                    this.drawCard();
                 }
-                this.drawCard();
             });
         }
     },
 
     snowmanNose: function () {
+        console.log('nose');
         enemy.giveDmg(8);
+        this.cardAttackEnemy();
     },
 
     orange: function () {
+        console.log('orange');
         player.addHeal(3);
     },
 
     snowJacket: function () {
-        //to make
+        console.log('jacket');
+        dmgMe = 2;
+        this.cardAttackEnemy();
     },
 
     snowBall: function () {
+        console.log('ball');
         enemy.giveDmg(6);
+        this.cardAttackEnemy();
     },
 
     snowFury: function () {
-        //to make
+        console.log('fury');
+        bonusDmg = 5;
     },
 
     winterBoots: function () {
-        //to make
+        console.log('boots');
+        this.iceFortress();
     },
 
     stick: function () {
+        console.log('stick');
         enemy.giveDmg(5);
+        this.cardAttackEnemy();
     },
 
     freeze: function () {
-        //to make
+        console.log('freeze');
+        dmgMeMinus = -3;
     },
 
     iceMace: function () {
+        console.log('iceMace');
         enemy.giveDmg(12);
+        this.cardAttackEnemy();
     },
 
     crystalOfWinter: function () {
-        //to make
+        console.log('crystalOfWinter');
+        bonusDmg = 10;
     },
 
-    snowTap: function () {
-        //to make
+    snowTrap: function () {
+        console.log('trap');
+        this.snowJacket();
     },
 
     snowCannon: function () {
+        console.log('cannon');
         enemy.giveDmg(15);
+        this.cardAttackEnemy();
     },
 
     iceFortress: function () {
-        //to make
+        console.log('fortress');
+        blockEnemy = true;
     },
 
     icicle: function () {
+        console.log('icicle');
         enemy.giveDmg(4);
+        this.cardAttackEnemy();
     },
 
     snowPunch: function () {
+        console.log('punch');
         enemy.giveDmg(5);
+        this.cardAttackEnemy();
+    },
+
+    wind: function () {
+        console.log('wind');
+        this.addCard();
+    },
+
+    hotChocolate: function () {
+        console.log('hot chocolate');
+        player.addHeal(10);
     },
 };

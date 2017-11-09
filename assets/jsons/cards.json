@@ -33,7 +33,7 @@
      {
       "name":"Winter boots",
       "availability":"true",
-      "description":"You can attack 2 times",
+      "description":"Blocks the opponent's \n next move",
       "sprite":"Speed"
     },
      {
@@ -72,12 +72,12 @@
       "description":"Deals 15 Dmg",
       "sprite":"Cannon"
     },
-//    {
-//      "name":"Witch",
-//      "availability":"false",
-//      "description":"You get a temporary hero",
-//      "sprite":"Witch"
-//    },
+    {
+      "name":"Wind",
+      "availability":"false",
+      "description":"Add card to hand",
+      "sprite":"Witch"
+    },
     {
       "name":"Ice fortress",
       "availability":"false",
@@ -90,12 +90,12 @@
       "description":"Deals 4 Dmg to each opponent",
       "sprite":"Revolver"
     },
-//    {
-//      "name":"Giant",
-//      "availability":"false",
-//      "description":"Gets hurt for you, \n he has 20 lives",
-//      "sprite":"Giant"
-//    },
+    {
+      "name":"Hot chocolate",
+      "availability":"false",
+      "description":"Returns 10 health points",
+      "sprite":"Giant"
+    },
     {
       "name":"Snow punch",
       "availability":"false",

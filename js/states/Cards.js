@@ -10,14 +10,12 @@ let readyAdd = true;
 let cardState = {
 
     create: function () {
-        buttonPlay = game.add.button(game.world.centerX -50,10,'button-play',this.go,this,2,1,0);
+        buttonPlay = game.add.button(550,10,'button-play',this.go,this,2,1,0);
 
         buttonLeft = game.add.button(70,460,'left_arrow',this.back);
         buttonRight = game.add.button(1078,460,'right_arrow',this.up);
 
         game.add.sprite(203,90,'table');
-
-        this.button = [];
 
         for(let i=pickNumber; i < pickNumber+5; i++){
             pickHand[i%5] = cardsAvailable[i%5];
@@ -33,7 +31,8 @@ let cardState = {
         pickButton[2] = game.add.button(230 + (2 * 168), 410, pickHand[2].getSprite(), this.pickThree,this);
         pickButton[3] = game.add.button(230 + (3 * 168), 410, pickHand[3].getSprite(), this.pickFour,this);
         pickButton[4] = game.add.button(230 + (4 * 168), 410, pickHand[4].getSprite(), this.pickFive,this);
-        console.log(deck);
+
+        this.button = [];
     },
 
     update: function () {
@@ -41,18 +40,19 @@ let cardState = {
     },
 
     go: function () {
-    	if(deck.length === 5 && nameArray.length === 5){
-            game.state.start("play")
-                }
-            else{
-            game.add.text(750,35,"You did`t pick 5 cards",{fill: '#f00'});
+    	if(deck.length == 5 && nameArray.length == 5){
+        game.state.start("play")
+        	}
+    	else{
+    	game.add.text(750,35,"You did`t pick 5 cards",{fill: '#f00'});
     	}
     },
 
     pickOne: function () {
-        let name = pickHand[0].getName();
+        console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.indexOf(name) >= 0){
+            name = pickHand[0].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -67,9 +67,10 @@ let cardState = {
         }
     },
     pickTwo: function () {
-        let name = pickHand[1].getName();
+        console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.indexOf(name) >= 0){
+            name = pickHand[1].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -84,10 +85,10 @@ let cardState = {
         }
     },
     pickThree: function () {
-        let name = pickHand[2].getName();
-        console.log(name);
+        console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.indexOf(name) >= 0){
+            name = pickHand[2].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -102,9 +103,10 @@ let cardState = {
         }
     },
     pickFour: function () {
-        let name = pickHand[3].getName();
+        console.log("jestem tutaj");
         if(readyAdd){
-            if(nameArray.indexOf(name) >= 0){
+            name = pickHand[3].getName();
+            if(nameArray.indexOf(name)>= 0){
 
             }else{
                 if(deck.length === 5){
@@ -119,8 +121,9 @@ let cardState = {
         }
     },
     pickFive: function () {
-        let name = pickHand[4].getName();
+        console.log("jestem tutaj");
         if(readyAdd){
+            name = pickHand[4].getName();
             if(nameArray.indexOf(name) >= 0){
 
             }else{
@@ -184,18 +187,17 @@ let cardState = {
     },
 
     drawSelect: function () {
-
         for(let j = 0; j < this.button.length;j++){
             this.button[j].kill();
         }
 
         this.button = [];
-
         for(let i = 0; i < deck.length; i++){
         this.button[i] = game.add.button(230 + (i * 168),111,deck[i].getSprite(),()=>{
             deck.splice(i,1);
             nameArray.splice(i,1);
             this.drawSelect();
+            console.log(deck,nameArray);
         });
         }
     }
