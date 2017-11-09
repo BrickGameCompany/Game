@@ -1,6 +1,6 @@
 Player = function(game){
 
-    Phaser.Sprite.call(this,game,250,310,"player");
+    Phaser.Sprite.call(this,game,250,310,"unicorn");
 
     this.anchor.setTo(0.5,1);
 

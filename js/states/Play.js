@@ -14,10 +14,13 @@ let blockEnemy = false;
 let playState = {
 
     create: function () {
-
+        game.add.sprite(0,0,'background_game');
         game.add.sprite(0,0,"ground");
 
-        expBar = game.add.sprite(35,425,'exp0');
+        game.add.sprite(510,20,'tree_2');
+        game.add.sprite(1190,20,'tree_2');
+
+        expBar = game.add.sprite(35,385,'exp0');
 
         this.cards = [];
 
@@ -26,6 +29,8 @@ let playState = {
         let tween = game.add.tween(enemy).to({x: 1000},2000);
         tween.onComplete.add(this.setPlayerRound,this);
         tween.start();
+
+        game.add.sprite(0,45,'tree_1');
 
         time = game.add.text(640,100,roundTime,{fill:"#fff"});
         playerHeal = game.add.text(250,100,roundTime,{fill:"#f00"});
@@ -93,18 +98,28 @@ let playState = {
         dmg = enemy.getDmg();
 
         if(!blockEnemy){
-            if(dmgMe > 0)
-                dmg = dmg / dmgMe;
-            console.log(dmg);
-            if(dmgMeMinus > 0)
-                dmg = dmg - dmgMeMinus;
-            console.log(dmg);
+
+
+            let tween = game.add.tween(enemy).to({x:400},1000);
+            tween.onComplete.add(() => {
+                if(dmgMe > 0)
+                    dmg = dmg / dmgMe;
+                console.log(dmg);
+                if(dmgMeMinus > 0)
+                    dmg = dmg - dmgMeMinus;
+                console.log(dmg);
+                let nextTween = game.add.tween(enemy).to({x:1000},1000);
+                nextTween.onComplete.add(()=>{
+                    blockEnemy = false;
+                    dmgMe = 0;
+                    dmgMeMinus = 0;
+                    this.setPlayerRound();
+                },this);
+                nextTween.start();
+            },this);
+            tween.start();
             player.giveDmg(dmg);
         }
-        blockEnemy = false;
-        dmgMe = 0;
-        dmgMeMinus = 0;
-        this.setPlayerRound();
 
     },
 
@@ -113,14 +128,13 @@ let playState = {
         let dmg = player.getDmg();
 
 
-        enemy.giveDmg(dmg + bonusDmg);
-        bonusDmg = 0;
-
         roundTime = 21;
         clearInterval(roundTimer);
 
         let tween = game.add.tween(player).to({x:800},1000);
             tween.onComplete.add(() => {
+                enemy.giveDmg(dmg + bonusDmg);
+                bonusDmg = 0;
                 let nextTween = game.add.tween(player).to({x:250},1000);
                 nextTween.onComplete.add(this.checkEnemy,this);
                 nextTween.start();
@@ -144,6 +158,7 @@ let playState = {
         switch(level){
             case 1:
                 randomEnemy = Math.floor(Math.random()*3);
+                console.log(monstersOne[randomEnemy].sprite);
                 enemy = new Enemy(game,monstersOne[randomEnemy].getSprite(),monstersOne[randomEnemy].getName(),monstersOne[randomEnemy].getAttack(),monstersOne[randomEnemy].getHeal());
                 tween = game.add.tween(enemy).to({x: 1000},2000);
                 tween.onComplete.add(this.setPlayerRound,this);

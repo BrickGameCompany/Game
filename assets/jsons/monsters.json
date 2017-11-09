@@ -4,19 +4,19 @@
       "name":"Slime",
       "attack":"3",
       "heal":"4",
-      "sprite":""
+      "sprite":"slime"
     },
     {
       "name":"Skeleton",
       "attack":"5",
       "heal":"6",
-      "sprite":""
+      "sprite":"skeleton"
     },
     {
       "name":"Goblin",
       "attack":"5",
       "heal":"8",
-      "sprite":""
+      "sprite":"goblin"
     }
 
   ],
@@ -25,25 +25,25 @@
       "name":"Ghost",
       "attack":"8",
       "heal":"12",
-      "sprite":""
+      "sprite":"ghost"
     },
     {
       "name":"Wampire",
       "attack":"20",
       "heal":"2",
-      "sprite":""
+      "sprite":"vampir"
     },
     {
       "name":"Basilisk",
       "attack":"6",
       "heal":"17",
-      "sprite":""
+      "sprite":"bazylisk"
     },
     {
       "name":"Warewolf",
       "attack":"14",
       "heal":"10",
-      "sprite":""
+      "sprite":"werewolf"
     }
   ],
   "level_three":[
@@ -51,25 +51,25 @@
       "name":"Troll",
       "attack":"5",
       "heal":"25",
-      "sprite":""
+      "sprite":"troll"
     },
     {
       "name":"Leprechaun",
       "attack":"14",
       "heal":"9",
-      "sprite":""
+      "sprite":"lepre"
     },
     {
-      "name":"Aquarius",
+      "name":"Gremlin",
       "attack":"9",
       "heal":"11",
-      "sprite":""
+      "sprite":"gremlin"
     },
     {
-      "name":"Sirin",
+      "name":"Phoenix",
       "attack":"13",
       "heal":"13",
-      "sprite":""
+      "sprite":"phoenix"
     }
   ],
   "level_four":[
@@ -77,13 +77,13 @@
       "name":"Hydra",
       "attack":"18",
       "heal":"30",
-      "sprite":""
+      "sprite":"hydra"
     },
     {
       "name":"Devil",
       "attack":"35",
       "heal":"21",
-      "sprite":""
+      "sprite":"devil"
     }
   ]
 }
