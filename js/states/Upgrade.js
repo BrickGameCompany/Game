@@ -1,6 +1,7 @@
 let upgradeState = {
 
     create:function () {
+        money +=2;
         game.add.sprite(0,0,"background_menu");
 
         game.add.sprite(545,33,'unicorn_field');
@@ -34,7 +35,7 @@ let upgradeState = {
     addAttack: function () {
         if(money >= 2){
             money -= 2;
-            attack += 5;
+            attack += 1;
             this.text_attack.setText(attack);
             this.moneyValue.setText(money);
         }
@@ -43,7 +44,7 @@ let upgradeState = {
     addLife: function () {
         if(money >= 2){
             money -= 2;
-            heal += 5;
+            heal += 2;
             this.text_heal.setText(heal);
             this.moneyValue.setText(money);
         }
