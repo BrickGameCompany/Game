@@ -11,8 +11,13 @@ let cardState = {
 
     create: function () {
 
+        deck = [];
+        nameArray = [];
+        level = 1;
+
+
         game.add.sprite(0,0,'background_menu');
-        buttonPlay = game.add.button(550,10,'button-play',this.go,this,2,1,0);
+        buttonPlay = game.add.button(550,25,'play',this.go,this,2,1,0);
 
         buttonLeft = game.add.button(70,460,'left_arrow',this.back);
         buttonRight = game.add.button(1078,460,'right_arrow',this.up);

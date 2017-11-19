@@ -24,8 +24,9 @@ let playState = {
 
         this.cards = [];
 
-        player = new Player(game);
-        enemy = new Enemy(game,"enemy","slime",3,5);
+        player = new Player(game,attack,heal);
+        enemy = game.add.sprite(0,0,'play');
+        this.rollEnemy();
         let tween = game.add.tween(enemy).to({x: 1000},2000);
         tween.onComplete.add(this.setPlayerRound,this);
         tween.start();
@@ -36,7 +37,7 @@ let playState = {
         playerHealText = game.add.text(250,5,roundTime,{fill:"#f00"});
         enemyHealText = game.add.text(1000,5,roundTime,{fill:"#f00"});
 
-        buttonAttack = game.add.button(game.world.centerX - 95,375,'blue-green',this.attackEnemy,this,2,1,0);
+        buttonAttack = game.add.button(game.world.centerX - 95,375,'attack',this.attackEnemy,this,2,1,0);
 
         for(let i=0; i<2;i++){ this.addCard()}
 
@@ -103,14 +104,14 @@ let playState = {
             enemyHeal = 150;
 
         healBarPlayer.clear();
-        healBarPlayer.lineStyle(2, 0x000000);
-        healBarPlayer.beginFill(0xBC1100);
+        healBarPlayer.lineStyle(1, 0xffffff);
+        healBarPlayer.beginFill(0xFF4D3B);
         healBarPlayer.drawRect(140,40,2*playerHeal,50);
         healBarPlayer.endFill();
 
         healBarEnemy.clear();
-        healBarEnemy.lineStyle(2, 0x000000);
-        healBarEnemy.beginFill(0xBC1100);
+        healBarEnemy.lineStyle(1, 0xffffff);
+        healBarEnemy.beginFill(0xFF4D3B);
         healBarEnemy.drawRect(840,40,2*enemyHeal,50);
         healBarEnemy.endFill();
     },
@@ -214,6 +215,8 @@ let playState = {
 
     checkEnemy: function () {
         if(enemy.getHeal() <= 0){
+            if(enemy.getName() === "Devil")
+                this.wictory();
             exp += 1;
             this.checkLevel();
             //add aniamtion level
@@ -229,10 +232,7 @@ let playState = {
     },
 
     wictory: function () {
-        if(enemy.getName === "slime" && enemy.getHeal <= 0){
-            game.state.start("wictory");
-        }
-
+        game.state.start("wictory");
     },
 
     checkLevel: function () {

@@ -1,11 +1,11 @@
-Player = function(game){
+Player = function(game,attack,heal){
 
     Phaser.Sprite.call(this,game,250,310,"unicorn");
 
     this.anchor.setTo(0.5,1);
 
-    this.life = 10;
-    this.attackDamage = 3;
+    this.life = heal;
+    this.attackDamage = attack;
 
     game.add.existing(this);
 };

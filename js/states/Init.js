@@ -1,7 +1,10 @@
 let cards, cardsAvailable, cardsNotAvailable;
 let monsters, monstersOne, monstersTwo, monstersThree, monstersBoss;
 let expSprites;
+let attack = 3;
+let heal = 10;
 let level = 1;
+let money = 0;
 
 let initState = {
 
@@ -18,9 +21,7 @@ let initState = {
         game.load.image("right_arrow","./assets/sprites/right.png");
         game.load.image("bg", "./assets/sprites/background_menu.jpg");
         game.load.image("button-play","./assets/sprites/menu_button.png");
-        game.load.image("button-credits","./assets/sprites/Credits_button.png");
         game.load.image("button-back", "./assets/sprites/Back_button.png");
-        game.load.image("cre", "./assets/sprites/Credits.png");
         game.load.image("blue-green","./assets/sprites/blue_button00.png");
         game.load.image("background","./assets/sprites/background.png");
         game.load.image("player","./assets/sprites/horse.png");
@@ -33,6 +34,8 @@ let initState = {
         game.load.image("tree_1","./assets/sprites/tree04.png");
         game.load.image("tree_2","./assets/sprites/tree12.png");
         game.load.image("unicorn","./assets/sprites/unicorn.png");
+        game.load.image("credits","./assets/sprites/credits.png");
+        game.load.image("logo","./assets/sprites/Logo.png");
 
         //exp
         game.load.image("exp0","./assets/sprites/exp/exp_0.png");
@@ -42,21 +45,23 @@ let initState = {
         game.load.image("exp4","./assets/sprites/exp/exp_4.png");
 
         //items
-        game.load.image("rmeat", "./assets/sprites/items/RawMeat.png");
-        game.load.image("glad", "./assets/sprites/items/Gladius.png");
-        game.load.image("Armor", "./assets/sprites/items/Armor.png");
-        game.load.image("Dagger", "./assets/sprites/items/Dagger.png");
-        game.load.image("strenght", "./assets/sprites/items/strenght.png");
-        game.load.image("Speed", "./assets/sprites/items/Speed.png");
-        game.load.image("Stick", "./assets/sprites/items/Stick.png");
-        game.load.image("Weaknes", "./assets/sprites/items/Weaknes.png");
-        game.load.image("Mace", "./assets/sprites/items/Mace.png");
-        game.load.image("MCrystal", "./assets/sprites/items/MCrystal.png");
-        game.load.image("Mbow", "./assets/sprites/items/MBow.png");
-        game.load.image("Cannon", "./assets/sprites/items/Cannon.png");
-        game.load.image("Witch", "./assets/sprites/items/Witch.png");
-        game.load.image("Revolver", "./assets/sprites/items/Revolver.png");
-        game.load.image("Shield", "./assets/sprites/items/Shield.png");
+        game.load.image('crystal','./assets/sprites/cards/crystal_of_winter_card.png');
+        game.load.image('freeze','./assets/sprites/cards/freez_card.png');
+        game.load.image('hot','./assets/sprites/cards/hot_chocolate_card.png');
+        game.load.image('fortress','./assets/sprites/cards/ice_fortress_card.png');
+        game.load.image('mace','./assets/sprites/cards/ice_mace_card.png');
+        game.load.image('icicle','./assets/sprites/cards/icicle_card.png');
+        game.load.image('orange','./assets/sprites/cards/orange_card.png');
+        game.load.image('punch','./assets/sprites/cards/snow_punch_card.png');
+        game.load.image('cannon','./assets/sprites/cards/snow_cannon_card.png');
+        game.load.image('fury','./assets/sprites/cards/snow_fury_card.png');
+        game.load.image('jacket','./assets/sprites/cards/snow_jakcet_card.png');
+        game.load.image('trap','./assets/sprites/cards/snow_trap_card.png');
+        game.load.image('snowball','./assets/sprites/cards/snowball_card.png');
+        game.load.image('nose','./assets/sprites/cards/snowman_nose_card.png');
+        game.load.image('stick','./assets/sprites/cards/stick_card.png');
+        game.load.image('wind','./assets/sprites/cards/wind_card.png');
+        game.load.image('boots','./assets/sprites/cards/winter_boots.png');
 
         //enemys
         game.load.image("goblin","./assets/sprites/enemy/goblin.png");
@@ -72,6 +77,21 @@ let initState = {
         game.load.image("gremlin","./assets/sprites/enemy/gremlin.png");
         game.load.image("hydra","./assets/sprites/enemy/hydra.png");
         game.load.image("phoenix","./assets/sprites/enemy/phoenix.png");
+
+        //gui
+        game.load.image('add','./assets/sprites/gui/add_button.png');
+        game.load.image('attack','./assets/sprites/gui/attack_button.png');
+        game.load.image('back','./assets/sprites/gui/back.png');
+        game.load.image('cost_field','./assets/sprites/gui/coast_field.png');
+        game.load.image('dmg_field','./assets/sprites/gui/dmg_field.png');
+        game.load.image('empty_field','./assets/sprites/gui/empty_filed.png');
+        game.load.image('earned','./assets/sprites/gui/erned.png');
+        game.load.image('heal_field','./assets/sprites/gui/heal_field.png');
+        game.load.image('money_field','./assets/sprites/gui/money_field.png');
+        game.load.image('money_field_blank','./assets/sprites/gui/money_field_blank.png');
+        game.load.image('play','./assets/sprites/gui/play_button.png');
+        game.load.image('unicorn_field','./assets/sprites/gui/unicorn_field.png');
+        game.load.image('you_lose','./assets/sprites/gui/you_lose.png');
 
 
         //audio

@@ -73,6 +73,11 @@ Enemy.prototype.getHeal = function () {
     return this.life;
 };
 
+Enemy.prototype.getName = function () {
+    return this.name;
+};
+
+
 Enemy.prototype.zeroHeal = function(){
     if(this.life < 0){
         this.life = 0;
